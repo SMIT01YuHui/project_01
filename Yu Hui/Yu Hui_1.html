@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>感恩節,購物清單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.toast.css">
+
+
+</head>
+
+<body>
+
+ <h1>
+     <center> 
+         <span style="color:orange;">感恩節,購物清單</span>
+         </center>
+     </h1>
+     <hr>
+
+    <div class="container">
+        <!-- HTML 內容放這邊 -->
+        <form class="form-inline" method="post" action="echo.php">
+        
+           <div class="form-group">
+                <!--form-group 屬性設定為群組-->
+                    <label for="user">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    客戶名稱
+                </label>
+                    <input type="text" 
+                            id="user" 
+                            name="user" 
+                            size="8"
+                            maxlength="4"
+                             placeholder="user請輸入FB名稱"/>
+                <!--</div>-->
+            </div>
+            <br>
+
+        <div id ="myDIV1">
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="pt1">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    商品名稱
+                </label>
+                    <input type="text" 
+                            id="pt1" 
+                            name="pt1"
+                             size="15"
+                             placeholder="pt1商品名稱"/>
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="url">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    網址
+                </label>
+                    <input type="url" 
+                            id="url1" 
+                            name="url1" 
+                             size="15"
+                             placeholder="ur1http://WWW./...."
+                            />
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="cs1">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    顏色
+                </label>
+                <input type="text" 
+                            id="cs1" 
+                            name="cs1" 
+                            size="15"
+                            maxlength="10"
+                             placeholder="cs1"/>
+                   
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <label for="size1">
+                    Size
+                </label>
+                <select id="size1"
+                        name="size1">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="其他">其他 
+                </option>
+            </select>
+            <!--</div>-->
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <div class="form-group">
+                    <label for="qry1">
+                    數量
+                </label>
+                <input type="number" 
+                            id="qry1" 
+                            name="qry1" 
+                            min="1" 
+                            max="10"
+                            placeholder="qry1"/>
+                </div>
+                
+                
+          
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="userNameTextBox">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    金額
+                </label>
+                    <input type="text" 
+                            id="s1" 
+                            name="s1"
+                            size="8"
+                            maxlength="4"
+                             placeholder="s1美金"/>
+                <!--</div>-->
+                 <button onclick ="myFunction_add()" 
+                        type="button" 
+                        id="add1" 
+                        class="label label-info" 
+                        name="add1" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    +
+            </button>
+            <button onclick ="Remove()" 
+                        type="button" 
+                        id="del1" 
+                        class="label label-info" 
+                        name="del1" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    -
+            </button>
+            </div>
+           
+            </div>
+            
+            
+            <div id ="myDIV2" style="display:none">
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="pt2">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    商品名稱
+                </label>
+                    <input type="text" 
+                            id="pt2" 
+                            name="pt2"
+                             size="15"
+                             placeholder="pt2商品名稱"/>
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="url2">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    網址
+                </label>
+                    <input type="url" 
+                            id="url2" 
+                            name="url2" 
+                             size="15"
+                             placeholder="url2http://WWW./...."
+                            />
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="cs2">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    顏色
+                </label>
+                <input type="text" 
+                            id="cs2" 
+                            name="cs2" 
+                            size="15"
+                            maxlength="10"
+                             placeholder="cs2"/>
+                   
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <label for="size2">
+                    Size
+                </label>
+                <select id="size2"
+                        name="size2">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="其他">其他 
+                </option>
+            </select>
+            <!--</div>-->
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <div class="form-group">
+                    <label for="qry2">
+                    數量
+                </label>
+                <input type="number" 
+                            id="qry2" 
+                            name="qry2" 
+                            min="1" 
+                            max="10"
+                            placeholder="qry2"/>
+                </div>
+                
+                
+          
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="s2">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    金額
+                </label>
+                    <input type="text" 
+                            id="s2" 
+                            name="s2"
+                            size="8"
+                            maxlength="4" 
+                             placeholder="s2美金"/>
+                <!--</div>-->
+                 <button onclick ="myFunction_add()" 
+                        type="button" 
+                        id="add2" 
+                        class="label label-info" 
+                        name="add2" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    +
+            </button>
+            <button onclick ="Remove()" 
+                        type="button" 
+                        id="del2" 
+                        class="label label-info" 
+                        name="del2" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    -
+            </button>
+            </div>
+
+            </div>
+            
+            
+            <div id ="myDIV3" style="display:none">
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="pt3">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    商品名稱
+                </label>
+                    <input type="text" 
+                            id="pt3" 
+                            name="pt3"
+                             size="15"
+                             placeholder="pt3商品名稱"/>
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="url3">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    網址
+                </label>
+                    <input type="url3" 
+                            id="url3" 
+                            name="url3" 
+                             size="15"
+                             placeholder="url3http://WWW./...."
+                            />
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="cs3">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    顏色
+                </label>
+                <input type="text" 
+                            id="cs3" 
+                            name="cs3" 
+                            size="15"
+                            maxlength="10"
+                             placeholder="cs3"/>
+                   
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <label for="size3">
+                    Size
+                </label>
+                <select id="size3"
+                        name="size3">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="其他">其他 
+                </option>
+            </select>
+            <!--</div>-->
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <div class="form-group">
+                    <label for="qry3">
+                    數量
+                </label>
+                <input type="number" 
+                            id="qry3" 
+                            name="qry3" 
+                            min="1" 
+                            max="10"
+                            placeholder="qry3"/>
+                </div>
+                
+                
+          
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="s3">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    金額
+                </label>
+                    <input type="text" 
+                            id="s3" 
+                            name="s3"
+                            size="8"
+                            maxlength="4" 
+                             placeholder="s3美金"/>
+                <!--</div>-->
+                 <button onclick ="myFunction_add()" 
+                        type="button" 
+                        id="add3" 
+                        class="label label-info" 
+                        name="add3" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    +
+            </button>
+            <button onclick ="Remove()" 
+                        type="button" 
+                        id="del3" 
+                        class="label label-info" 
+                        name="del3" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    -
+            </button>
+            </div>
+
+            </div>
+            
+            
+             <div id ="myDIV4" style="display:none">
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="pt4">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    商品名稱
+                </label>
+                    <input type="text" 
+                            id="pt4" 
+                            name="pt4"
+                             size="15"
+                             placeholder="pt4商品名稱"/>
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="url4">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    網址
+                </label>
+                    <input type="url" 
+                            id="url4" 
+                            name="url4" 
+                             size="15"
+                             placeholder="url4http://WWW./...."
+                            />
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="cs4">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    顏色
+                </label>
+                <input type="text" 
+                            id="cs4" 
+                            name="cs4" 
+                            size="15"
+                            maxlength="10"
+                             placeholder="cs4"/>
+                   
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <label for="size4">
+                    Size
+                </label>
+                <select id="size4"
+                        name="size4">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="其他">其他 
+               </option>
+            </select>
+            <!--</div>-->
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <div class="form-group">
+                    <label for="qry4">
+                    數量
+                </label>
+                <input type="number" 
+                            id="qry4" 
+                            name="qry4" 
+                            min="1" 
+                            max="10"
+                            placeholder="qry4"/>
+                </div>
+                
+                
+          
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="s4">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    金額
+                </label>
+                    <input type="text" 
+                            id="s4" 
+                            name="s4"
+                            size="8"
+                            maxlength="4" 
+                             placeholder="s4美金"/>
+                <!--</div>-->
+                 <button onclick ="myFunction_add()" 
+                        type="button" 
+                        id="add4" 
+                        class="label label-info" 
+                        name="add4" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    +
+            </button>
+            <button onclick ="Remove()" 
+                        type="button" 
+                        id="del4" 
+                        class="label label-info" 
+                        name="del4" 
+                        value="login"
+                        >
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    -
+            </button>
+            </div>
+
+            </div>
+               
+            
+             <div id ="myDIV5" style="display:none">
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="pt5">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    商品名稱
+                </label>
+                    <input type="text" 
+                            id="pt5" 
+                            name="pt5"
+                             size="15"
+                             placeholder="pt5商品名稱"/>
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="url5">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    網址
+                </label>
+                    <input type="url" 
+                            id="url5" 
+                            name="url5"
+                             size="15"
+                             placeholder="url5http://WWW./...."
+                            />
+                <!--</div>-->
+            </div>
+
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="cs5">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    顏色
+                </label>
+                <input type="text" 
+                            id="cs5" 
+                            name="cs5" 
+                            size="15"
+                            maxlength="10"
+                             placeholder="cs5"/>
+                   
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <label for="size5">
+                    Size
+                </label>
+                <select id="size5"
+                        name="size5">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="其他">其他 
+                </option>
+            </select>
+            <!--</div>-->
+
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <div class="form-group">
+                    <label for="qry5">
+                    數量
+                </label>
+                <input type="number" 
+                            id="qry5" 
+                            name="qry5" 
+                            min="1" 
+                            max="10"
+                            placeholder="qry5"/>
+                </div>
+                
+                
+          
+            <div class="form-group">
+                <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <label for="s5">
+                    <!--<span class="glyphicon glyphicon-user"></span> -->
+                    金額
+                </label>
+                    <input type="text" 
+                            id="s5" 
+                            name="s5"
+                            size="8"
+                            maxlength="4" 
+                             placeholder="s5美金"/>
+                <!--</div>-->
+            </div>
+
+            </div>
+               
+            
+         
+         
+         
+         <div id=return></div>
+         
+         
+        
+         
+        
+             
+
+            <!--</div>-->
+            
+            <div class="col-sm-offset-10 col-sm-15">
+             <button onclick="myFunction()"
+                        type="button" 
+                        id="loginButton" 
+                        class="btn-success" 
+                        name="loginOrCancel" 
+                        value="login">
+                    <!--<span class="glyphicon glyphicon-off"></span> -->
+                    確認訂單
+            </button>
+                <button type="reset" 
+                        id="cancelButton" 
+                        class="btn-default" 
+                        name="loginOrCancel" 
+                        value="login">
+                    <!--<span class="glyphicon glyphicon-remove"></span> -->
+                    取消訂單
+            </button>
+            </div>
+            
+        </form>
+        
+        <div id:"jpg" name="jpg" class="row" style="display:none">
+        圖檔
+        
+  <!--   <div class="col-xs-6 col-md-3">-->
+  <!--  <a href="#" class="thumbnail">-->
+  <!--    <img src="./media/Bib short.jpg" alt="Bib short">-->
+  <!--  </a>-->
+    
+    
+  <!--</div>-->
+  ...
+</div>
+<h4 id=demo1></h4>
+<h4 id=demo2></h4>
+<p id=demo3></p>
+<p id=demo4></p>
+<p id=demo5></p>
+
+
+    </div>
+</body>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.toast.js"></script>
+    <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
+    
+       
+
+<script>
+
+
+
+    $("#del1").click(function(){
+        $("#myDIV2").hide();
+    });
+    
+    $("#add1").click(function(){
+        $("#myDIV2").show();
+        
+    });
+    
+    $("#del2").click(function(){
+        $("#myDIV3").hide();
+    });
+    $("#add2").click(function(){
+        $("#myDIV3").show();
+    });
+    
+    $("#del3").click(function(){
+        $("#myDIV4").hide();
+    });
+    $("#add3").click(function(){
+        $("#myDIV4").show();
+    });
+    
+    $("#del4").click(function(){
+        $("#myDIV5").hide();
+    });
+    
+    $("#add4").click(function(){
+        $("#myDIV5").show();
+    });
+    
+
+  
+
+    
+    
+    
+    function myFunction() {
+        
+    
+   
+    
+    var demo1 = document.getElementById("demo1"); 
+    var demo2 = document.getElementById("demo2"); 
+    var demo3 = document.getElementById("demo3"); 
+    var demo4 = document.getElementById("demo4"); 
+    var demo5 = document.getElementById("demo5"); 
+    
+    var pts1=document.getElementById("pt1");
+    var pts2=document.getElementById("pt2");
+    var pts3=document.getElementById("pt3");
+    var pts4=document.getElementById("pt4");
+    var pts5=document.getElementById("pt5");
+    
+    var s1=document.getElementById("s1").value;
+    var s2=document.getElementById("s2").value;
+    var s3=document.getElementById("s3").value;
+    var s4=document.getElementById("s4").value;
+    var s5=document.getElementById("s5").value;
+    
+    var qry1=document.getElementById("qry1").value;
+    var qry2=document.getElementById("qry2").value;
+    var qry3=document.getElementById("qry3").value;
+    var qry4=document.getElementById("qry4").value;
+    var qry5=document.getElementById("qry5").value;
+    
+    
+    
+    
+    
+    
+    var summed = (qry1*s1)+(qry2*s2)+(qry3*s3)+(qry4*s4)+(qry5*s5) ;
+
+
+    	demo1.innerHTML = "已購買:"+pts1.value +"."+pts2.value+"."+pts3.value+"."+pts4.value
+    	+"."+pts5.value ;
+     	demo2.innerHTML = summed ;
+    // 	demo3.innerHTML = "已購買"+pts3.value ;
+    // 	demo4.innerHTML = "已購買"+pts4.value ;
+    // 	demo5.innerHTML = "已購買"+pts5.value ;
+    	
+ var x = document.createElement("IMG");
+    x.setAttribute("src", "./media/Bib short.jpg");
+    x.setAttribute("width", "304");
+    x.setAttribute("height", "228");
+    x.setAttribute("alt", "The Pulpit Rock");
+    document.body.appendChild(x);
+
+    }
+
+</script>
+  
+   
+
+
+
+</html>
